@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Quiz Enerz - Descubra seu plano ideal">
+    <meta name="theme-color" content="#FAF8F5">
+    <title>Enerz Quiz | Seu Plano Personalizado</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Reuse main styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Quiz specific styles -->
+    <link rel="stylesheet" href="quiz.css">
+
+    <!-- Meta Pixel Code - Keeping it consistent -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1793118674712620');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1793118674712620&ev=PageView&noscript=1" /></noscript>
+</head>
+
+<body>
+
+    <!-- Simplified Header -->
+    <header class="quiz-header">
+        <div class="container">
+            <a href="/" class="logo">ENERZ</a>
+        </div>
+    </header>
+
+    <main class="quiz-container">
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Quiz Content -->
+            <div class="quiz-card" id="quizCard">
+                <!-- Dynamic Content will be injected here via JS -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
