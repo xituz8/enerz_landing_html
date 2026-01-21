@@ -332,6 +332,7 @@ ul {
     line-height: 0.95;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    font-style: italic;
     margin: 1.5rem 0;
 }
 
