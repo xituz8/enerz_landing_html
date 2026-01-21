@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Nutrição organizada por inteligência artificial. Baseada em dados, não em promessas. Calculadoras científicas para TMB, TDEE, macros e mais.">
+    <meta name="theme-color" content="#FAF8F5">
+    <title>enerz.ai | Nutrição por IA</title>
+
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1793118674712620');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1793118674712620&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">ENERZ</a>
+
+            <div class="nav-links">
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#precos">Preços</a>
+                <a href="/metodos-cientificos">Calculadoras</a>
+            </div>
+
+            <a href="#precos" class="btn btn-primary nav-cta">Começar</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <span class="logo">ENERZ</span>
+                <button class="menu-close" id="menuClose" aria-label="Fechar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#precos">Preços</a>
+                <a href="/metodos-cientificos">Calculadoras</a>
+            </div>
+            <a href="#precos" class="btn btn-primary mobile-menu-cta">Começar</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="badge animate-fade-up">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Nutrição por IA</span>
+            </div>
+            <h1 class="hero-title animate-fade-up delay-1">
+                Você não falha na dieta. <span class="text-primary">Ela que falha</span> para se adaptar a você.
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-2">
+                A Enerz recalcula sua dieta conforme seu corpo, seus gostos, sua rotina e seus objetivos mudam.
+            </p>
+            <a href="#precos" class="btn btn-primary btn-lg animate-fade-up delay-3">
+                Começar
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Video Hero Section -->
+    <section class="video-hero" id="como-funciona">
+        <div class="container">
+            <div class="video-hero-grid">
+                <div class="video-hero-content">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        <span>Nova Era da Nutrição</span>
+                    </div>
+                    <h2 class="section-title">Sua Dieta com <span class="text-primary">IA</span></h2>
+                    <p class="section-subtitle">
+                        Veja como a ENERZ cria e ajusta sua dieta em tempo real, adaptando-se às suas necessidades e preferências.
+                    </p>
+                </div>
+                <div class="video-mockup">
+                    <div class="video-glow"></div>
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/videopronto.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section class="app-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-content">
+                    <h2 class="showcase-title">Seu coach de <span class="text-primary">nutrição</span> no bolso</h2>
+                    <p class="showcase-subtitle">
+                        Tenha acesso a um plano alimentar personalizado que se adapta ao seu estilo de vida.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Planos personalizados</h3>
+                                <p>Dietas criadas especificamente para você</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Atualizações em tempo real</h3>
+                                <p>Ajustes automáticos conforme seu progresso</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Tracking completo</h3>
+                                <p>Acompanhe macros, calorias e nutrientes</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>IA avançada</h3>
+                                <p>Tecnologia de ponta para resultados reais</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-image">
+                    <div class="phone-glow"></div>
+                    <picture>
+                        <source srcset="assets/phone-mockup-1.avif" type="image/avif">
+                        <img src="assets/phone-mockup-1.png" alt="ENERZ App" loading="lazy" width="507" height="1014">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Showcase Section -->
+    <section class="feature-showcase">
+        <div class="container">
+            <div class="showcase-grid reverse">
+                <div class="showcase-image">
+                    <div class="phone-glow"></div>
+                    <picture>
+                        <source srcset="assets/phone-mockup-2.avif" type="image/avif">
+                        <img src="assets/phone-mockup-2.png" alt="ENERZ Features" loading="lazy" width="380" height="761">
+                    </picture>
+                </div>
+                <div class="showcase-content">
+                    <h2 class="showcase-title">Recursos completos para <span class="text-primary">resultados</span> reais</h2>
+                    <p class="showcase-subtitle">
+                        Tudo o que você precisa para alcançar seus objetivos nutricionais em um só lugar.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Receitas personalizadas</h3>
+                                <p>Sugestões baseadas nas suas preferências</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Suporte 24/7</h3>
+                                <p>Assistência sempre que precisar</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Comunidade exclusiva</h3>
+                                <p>Conecte-se com pessoas com objetivos similares</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Resultados comprovados</h3>
+                                <p>Milhares de usuários satisfeitos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title text-center">Por que <span class="text-primary">enerz.ai</span>?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Método científico</h3>
+                    <p>Aplicado à nutrição com base em evidências</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Cálculos precisos</h3>
+                    <p>De macros e micros para seu corpo</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Protocolos específicos</h3>
+                    <p>Suporte para dietas low-carb, cetogênica e mais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="precos">
+        <div class="container">
+            <h2 class="section-title text-center"><span class="text-primary">Acesso</span></h2>
+
+            <div class="billing-toggle">
+                <span class="toggle-label" data-billing="monthly">Mensal</span>
+                <button class="toggle-switch" id="billingToggle" aria-label="Alternar plano">
+                    <span class="toggle-handle"></span>
+                </button>
+                <span class="toggle-label" data-billing="annual">Anual</span>
+            </div>
+
+            <div class="pricing-card">
+                <div class="price-display">
+                    <div class="price monthly-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">29,99</span>
+                        <span class="period">/ mês</span>
+                    </div>
+                    <div class="price annual-price hidden">
+                        <span class="currency">12x</span>
+                        <span class="amount">R$ 23,99</span>
+                        <span class="period">Total R$ 287,88 / ano</span>
+                    </div>
+                </div>
+
+                <ul class="pricing-features">
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Dietas personalizadas
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Ajustes conforme necessário
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Cálculo de macros e micros
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Suporte via WhatsApp
+                    </li>
+                    <li class="annual-only hidden">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <strong>Economia de R$ 72,00/ano</strong>
+                    </li>
+                </ul>
+
+                <a href="https://pay.hub.la/azRo1diUh1n6VGO5CqEj" class="btn btn-primary btn-lg pricing-cta" id="pricingCta">
+                    Começar agora
+                </a>
+                <p class="pricing-note">7 dias de garantia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center">Perguntas <span class="text-primary">Frequentes</span></h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona a IA da ENERZ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nossa IA analisa seus dados pessoais, preferências alimentares, objetivos e rotina para criar um plano alimentar totalmente personalizado. Ela aprende com seu progresso e ajusta automaticamente as recomendações.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Posso cancelar a qualquer momento?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Você pode cancelar sua assinatura a qualquer momento, sem taxas ou multas. Nossa plataforma é flexível e sem compromisso de fidelidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Com que frequência a dieta é atualizada?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sua dieta pode ser ajustada sempre que necessário. Recomendamos revisões periódicas para garantir que o plano continue alinhado com seus objetivos e progresso.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Posso escolher os alimentos?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente! Você pode informar suas preferências, restrições alimentares e alimentos favoritos. Nossa IA considera tudo isso ao criar seu plano personalizado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como recebo minha dieta?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Após preencher o questionário inicial, sua dieta é gerada instantaneamente e fica disponível na plataforma. Você pode acessar de qualquer dispositivo, a qualquer momento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">enerz.ai</a>
+                    <p>Nutrição por IA. Baseada em dados.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="/metodos-cientificos">Métodos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="/metodos-cientificos/tmb">TMB</a></li>
+                        <li><a href="/metodos-cientificos/tdee">TDEE</a></li>
+                        <li><a href="/metodos-cientificos/percentage-fat">% Gordura</a></li>
+                        <li><a href="/metodos-cientificos/protein">Proteína</a></li>
+                        <li><a href="/metodos-cientificos/macro-distribution">Macros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/termos">Termos de Uso</a></li>
+                        <li><a href="/privacidade">Privacidade</a></li>
+                        <li><a href="/cookies">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 enerz.ai. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
