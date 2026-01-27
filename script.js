@@ -156,18 +156,22 @@
         const navbarRect = navbar.getBoundingClientRect();
         const logoRect = logo.getBoundingClientRect();
 
-        // On mobile, nav-cta is hidden, so use menu toggle as end point
-        const menuToggle = document.getElementById('menuToggle');
+        // Check if we're on mobile (nav-cta is hidden)
         const isNavCtaVisible = navCta && window.getComputedStyle(navCta).display !== 'none';
-        const endElement = isNavCtaVisible ? navCta : menuToggle;
 
-        if (!endElement) return;
+        let startX, endX;
 
-        const endRect = endElement.getBoundingClientRect();
+        if (isNavCtaVisible) {
+            // Desktop: from logo to nav-cta
+            const endRect = navCta.getBoundingClientRect();
+            startX = logoRect.right - navbarRect.left;
+            endX = endRect.left - navbarRect.left;
+        } else {
+            // Mobile: full width of navbar (centered)
+            startX = 0;
+            endX = navbarRect.width;
+        }
 
-        // Calculate positions relative to navbar
-        const startX = logoRect.right - navbarRect.left;
-        const endX = endRect.left - navbarRect.left;
         const lineLength = endX - startX;
 
         // Update line position
@@ -193,17 +197,22 @@
             const navbarRect = navbar.getBoundingClientRect();
             const logoRect = logo.getBoundingClientRect();
 
-            // On mobile, nav-cta is hidden, so use menu toggle as end point
-            const menuToggle = document.getElementById('menuToggle');
+            // Check if we're on mobile (nav-cta is hidden)
             const isNavCtaVisible = navCta && window.getComputedStyle(navCta).display !== 'none';
-            const endElement = isNavCtaVisible ? navCta : menuToggle;
 
-            if (!endElement) return;
+            let startX, endX;
 
-            const endRect = endElement.getBoundingClientRect();
+            if (isNavCtaVisible) {
+                // Desktop: from logo to nav-cta
+                const endRect = navCta.getBoundingClientRect();
+                startX = logoRect.right - navbarRect.left;
+                endX = endRect.left - navbarRect.left;
+            } else {
+                // Mobile: full width of navbar
+                startX = 0;
+                endX = navbarRect.width;
+            }
 
-            const startX = logoRect.right - navbarRect.left;
-            const endX = endRect.left - navbarRect.left;
             const lineLength = endX - startX;
 
             const windowHeight = window.innerHeight;
@@ -234,6 +243,7 @@
                 });
 
                 // Also check the CTA button
+                const endRect = navCta.getBoundingClientRect();
                 const ctaCenter = endRect.left + (endRect.width / 2) - navbarRect.left;
                 if (currentLineEnd >= ctaCenter) {
                     navCta.classList.add('crossed');
