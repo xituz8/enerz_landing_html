@@ -151,15 +151,23 @@
     const navCta = document.querySelector('.nav-cta');
 
     function updateProgressLinePosition() {
-        if (!progressLine || !logo || !navCta || !navbar) return;
+        if (!progressLine || !logo || !navbar) return;
 
         const navbarRect = navbar.getBoundingClientRect();
         const logoRect = logo.getBoundingClientRect();
-        const ctaRect = navCta.getBoundingClientRect();
+
+        // On mobile, nav-cta is hidden, so use menu toggle as end point
+        const menuToggle = document.getElementById('menuToggle');
+        const isNavCtaVisible = navCta && window.getComputedStyle(navCta).display !== 'none';
+        const endElement = isNavCtaVisible ? navCta : menuToggle;
+
+        if (!endElement) return;
+
+        const endRect = endElement.getBoundingClientRect();
 
         // Calculate positions relative to navbar
         const startX = logoRect.right - navbarRect.left;
-        const endX = ctaRect.left - navbarRect.left;
+        const endX = endRect.left - navbarRect.left;
         const lineLength = endX - startX;
 
         // Update line position
@@ -181,13 +189,21 @@
         }
 
         // Update scroll progress line
-        if (progressLine && logo && navCta && navbar) {
+        if (progressLine && logo && navbar) {
             const navbarRect = navbar.getBoundingClientRect();
             const logoRect = logo.getBoundingClientRect();
-            const ctaRect = navCta.getBoundingClientRect();
+
+            // On mobile, nav-cta is hidden, so use menu toggle as end point
+            const menuToggle = document.getElementById('menuToggle');
+            const isNavCtaVisible = navCta && window.getComputedStyle(navCta).display !== 'none';
+            const endElement = isNavCtaVisible ? navCta : menuToggle;
+
+            if (!endElement) return;
+
+            const endRect = endElement.getBoundingClientRect();
 
             const startX = logoRect.right - navbarRect.left;
-            const endX = ctaRect.left - navbarRect.left;
+            const endX = endRect.left - navbarRect.left;
             const lineLength = endX - startX;
 
             const windowHeight = window.innerHeight;
@@ -202,26 +218,28 @@
             // Calculate current line end position
             const currentLineEnd = startX + (scrollPercentage * lineLength);
 
-            // Update nav links color based on line position
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                const linkRect = link.getBoundingClientRect();
-                const linkCenter = linkRect.left + (linkRect.width / 2) - navbarRect.left;
+            // Update nav links color based on line position (only on desktop)
+            if (isNavCtaVisible) {
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    const linkRect = link.getBoundingClientRect();
+                    const linkCenter = linkRect.left + (linkRect.width / 2) - navbarRect.left;
 
-                // If line has passed the center of this link, make it yellow
-                if (currentLineEnd >= linkCenter) {
-                    link.classList.add('crossed');
+                    // If line has passed the center of this link, make it yellow
+                    if (currentLineEnd >= linkCenter) {
+                        link.classList.add('crossed');
+                    } else {
+                        link.classList.remove('crossed');
+                    }
+                });
+
+                // Also check the CTA button
+                const ctaCenter = endRect.left + (endRect.width / 2) - navbarRect.left;
+                if (currentLineEnd >= ctaCenter) {
+                    navCta.classList.add('crossed');
                 } else {
-                    link.classList.remove('crossed');
+                    navCta.classList.remove('crossed');
                 }
-            });
-
-            // Also check the CTA button
-            const ctaCenter = ctaRect.left + (ctaRect.width / 2) - navbarRect.left;
-            if (currentLineEnd >= ctaCenter) {
-                navCta.classList.add('crossed');
-            } else {
-                navCta.classList.remove('crossed');
             }
         }
 
