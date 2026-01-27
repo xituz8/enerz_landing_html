@@ -9,9 +9,9 @@
     --primary-foreground: #000000;
     --background: #FAF8F5;
     --foreground: #1A1A1A;
-    --secondary: #F0EDE8;
+    --secondary: #F5F3EF;
     --secondary-foreground: #1A1A1A;
-    --muted: #F0EDE8;
+    --muted: #F5F3EF;
     --muted-foreground: #6B6B6B;
     --border: rgba(0, 0, 0, 0.1);
     --radius: 0.625rem;
@@ -162,7 +162,7 @@ ul {
     background: rgba(250, 248, 245, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: none;
     z-index: 100;
 }
 
@@ -177,6 +177,9 @@ ul {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
     font-size: 1.25rem;
     font-weight: 900;
     font-style: italic;
@@ -184,26 +187,56 @@ ul {
     background: var(--primary);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
+    position: relative;
+    z-index: 10;
+    letter-spacing: 0.02em;
+}
+
+.logo svg {
+    flex-shrink: 0;
 }
 
 .nav-links {
     display: none;
     gap: 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-links a {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--muted-foreground);
-    transition: color 0.2s;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--primary);
 }
 
+.nav-links a.crossed {
+    color: var(--primary);
+    font-weight: 700;
+}
+
 .nav-cta {
     display: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    font-size: 1.25rem;
+    font-weight: 900;
+    font-style: italic;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.nav-cta.crossed {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 0 20px rgba(255, 212, 0, 0.6), 0 0 40px rgba(255, 212, 0, 0.4);
 }
 
 .menu-toggle {
@@ -214,6 +247,26 @@ ul {
     height: 40px;
     color: var(--foreground);
 }
+
+/* Scroll Progress Line */
+.scroll-progress-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.scroll-progress-line line {
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.1s linear;
+    vector-effect: non-scaling-stroke;
+}
+
 
 /* Mobile Menu */
 .mobile-menu {
@@ -523,52 +576,170 @@ ul {
 }
 
 /* ====================================
+   COMPARISON SLIDER SECTION
+   ==================================== */
+.comparison-section {
+    position: relative;
+    background: var(--background);
+}
+
+/* Scroll Track provides height for scrolling */
+.scroll-track {
+    height: 300vh;
+    /* 3x viewport height for scroll range */
+    position: relative;
+}
+
+/* Sticky Container keeps content in view while scrolling */
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.comparison-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.comparison-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* After Image (base layer) */
+.comparison-image.after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.comparison-image.after img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Before Image (top layer with clip-path) */
+.comparison-image.before {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.1s ease-out;
+}
+
+.comparison-image.before .image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.comparison-image.before img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Labels */
+.comparison-image .label {
+    position: absolute;
+    top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.comparison-image.before .label {
+    left: 1.5rem;
+}
+
+.comparison-image.after .label {
+    right: 1.5rem;
+}
+
+/* ====================================
    BENEFITS SECTION
    ==================================== */
-.benefits {
+/* ====================================
+   TESTIMONIALS SECTION (formerly Benefits)
+   ==================================== */
+.testimonials {
     padding: 4rem 0;
 }
 
-.benefits-grid {
+.testimonials-grid {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.benefit-card {
+.testimonial-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.benefit-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: rgba(255, 212, 0, 0.1);
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-img-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--primary);
 }
 
-.benefit-icon svg {
-    color: var(--primary);
-}
-
-.benefit-card h3 {
+.testimonial-text {
     font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: var(--muted-foreground);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
-.benefit-card p {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
+.testimonial-author h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
 }
 
 /* ====================================
@@ -943,18 +1114,34 @@ ul {
         border-color: rgba(255, 212, 0, 0.3);
     }
 
-    /* Benefits */
-    .benefits {
+    /* Comparison Slider */
+    .comparison-wrapper {
+        max-width: 800px;
+    }
+
+    .comparison-container {
+        aspect-ratio: 16/10;
+    }
+
+    .comparison-image .label {
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
         padding: 6rem 0;
     }
 
-    .benefits-grid {
+    .testimonials-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
-    .benefit-card {
-        padding: 2rem;
+    .testimonial-card {
+        padding: 2.5rem;
+        height: 100%;
+        justify-content: space-between;
     }
 
     /* Pricing */

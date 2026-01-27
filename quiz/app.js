@@ -9,6 +9,13 @@ const quizData = [
         ]
     },
     {
+        question: "Qual é o seu sexo?",
+        options: [
+            { text: "Masculino", icon: "👨" },
+            { text: "Feminino", icon: "👩" }
+        ]
+    },
+    {
         question: "Qual é o seu nível de atividade física?",
         options: [
             { text: "Sedentário (Pouco ou nenhum exercício)", icon: "🛋️" },
@@ -23,7 +30,7 @@ const quizData = [
             { text: "Não, como de tudo", icon: "🥩" },
             { text: "Vegetariano / Vegano", icon: "🥗" },
             { text: "Intolerância à lactose / Glúten", icon: "🚫" },
-            { text: "Dieta Low-carb / Kato", icon: "🥑" }
+            { text: "Dieta Low-carb / Leto", icon: "🥑" }
         ]
     },
     {
@@ -33,6 +40,47 @@ const quizData = [
             { text: "30-45 anos", icon: "💼" },
             { text: "46-60 anos", icon: "👓" },
             { text: "Mais de 60 anos", icon: "🌟" }
+        ]
+    },
+    {
+        question: "Como é a qualidade do seu sono?",
+        options: [
+            { text: "Durmo muito bem", icon: "😴" },
+            { text: "Acordo cansado às vezes", icon: "🥱" },
+            { text: "Tenho insônia frequente", icon: "😫" },
+            { text: "Durmo pouco por falta de tempo", icon: "⏰" }
+        ]
+    },
+    {
+        question: "Quantos litros de água você bebe por dia?",
+        options: [
+            { text: "Menos de 1 litro", icon: "💧" },
+            { text: "Entre 1 e 2 litros", icon: "🥤" },
+            { text: "Mais de 2 litros", icon: "🌊" }
+        ]
+    },
+    {
+        question: "Quantas refeições você faz por dia?",
+        options: [
+            { text: "1-2 refeições", icon: "🍽️" },
+            { text: "3 refeições (Café, Almoço, Jantar)", icon: "🥗" },
+            { text: "4 ou mais refeições (incluindo lanches)", icon: "🍎" }
+        ]
+    },
+    {
+        question: "Qual seu nível de estresse diário?",
+        options: [
+            { text: "Baixo", icon: "😌" },
+            { text: "Moderado", icon: "😐" },
+            { text: "Alto", icon: "🤯" }
+        ]
+    },
+    {
+        question: "Quanto tempo você tem disponível para cozinhar?",
+        options: [
+            { text: "Tenho bastante tempo", icon: "👨‍🍳" },
+            { text: "Consigo cozinhar o básico", icon: "🍳" },
+            { text: "Quase nenhum tempo", icon: "🥡" }
         ]
     }
 ];
@@ -89,8 +137,8 @@ function showCalculating() {
     quizCard.innerHTML = `
         <div class="loading-state">
             <div class="spinner"></div>
-            <h3>Analisando suas respostas...</h3>
-            <p style="color: var(--muted-foreground)">A IA está montando seu plano ideal.</p>
+            <h3>Computando seus resultados...</h3>
+            <p style="color: var(--muted-foreground)">A IA está analisando seu perfil.</p>
         </div>
     `;
 
@@ -109,26 +157,14 @@ function showResult() {
                 </svg>
             </div>
             
-            <h2 class="result-title">Seu Plano está Pronto!</h2>
+            <h2 class="result-title">Tudo pronto!</h2>
             <p class="result-text">
-                Com base nas suas respostas, a ENERZ identificou a estratégia perfeita para você atingir seus objetivos de forma rápida e saudável.
+                Seu plano personalizado foi gerado com sucesso.
             </p>
 
-            <div class="plan-highlight">
-                <h3>Plano Recomendado: ENERZ PRO</h3>
-                <p>Acesso completo a todas as ferramentas de IA + Suporte humano.</p>
-            </div>
-
-            <a href="https://pay.hub.la/azRo1diUh1n6VGO5CqEj" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
-                GARANTIR MEU PLANO AGORA
+            <a href="/" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+                VER MEU PLANO
             </a>
-            
-            <p class="guarantee">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align:middle;">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                7 dias de garantia incondicional
-            </p>
         </div>
     `;
 }

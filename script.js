@@ -3,7 +3,7 @@
  * Lightweight, performant interactions
  */
 
-(function() {
+(function () {
     'use strict';
 
     // DOM Elements
@@ -122,7 +122,7 @@
     // SMOOTH SCROLL
     // ====================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
 
@@ -142,10 +142,34 @@
     });
 
     // ====================================
-    // NAVBAR SCROLL EFFECT
+    // NAVBAR SCROLL EFFECT & PROGRESS LINE
     // ====================================
     let lastScroll = 0;
     let ticking = false;
+    const progressLine = document.querySelector('.scroll-progress-line line');
+    const logo = document.querySelector('.logo');
+    const navCta = document.querySelector('.nav-cta');
+
+    function updateProgressLinePosition() {
+        if (!progressLine || !logo || !navCta || !navbar) return;
+
+        const navbarRect = navbar.getBoundingClientRect();
+        const logoRect = logo.getBoundingClientRect();
+        const ctaRect = navCta.getBoundingClientRect();
+
+        // Calculate positions relative to navbar
+        const startX = logoRect.right - navbarRect.left;
+        const endX = ctaRect.left - navbarRect.left;
+        const lineLength = endX - startX;
+
+        // Update line position
+        progressLine.setAttribute('x1', startX);
+        progressLine.setAttribute('x2', endX);
+
+        // Update stroke-dasharray to match line length
+        progressLine.setAttribute('stroke-dasharray', lineLength);
+        progressLine.setAttribute('stroke-dashoffset', lineLength);
+    }
 
     function updateNavbar() {
         const currentScroll = window.pageYOffset;
@@ -154,6 +178,51 @@
             navbar?.classList.add('scrolled');
         } else {
             navbar?.classList.remove('scrolled');
+        }
+
+        // Update scroll progress line
+        if (progressLine && logo && navCta && navbar) {
+            const navbarRect = navbar.getBoundingClientRect();
+            const logoRect = logo.getBoundingClientRect();
+            const ctaRect = navCta.getBoundingClientRect();
+
+            const startX = logoRect.right - navbarRect.left;
+            const endX = ctaRect.left - navbarRect.left;
+            const lineLength = endX - startX;
+
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollableHeight = documentHeight - windowHeight;
+            const scrollPercentage = Math.min(currentScroll / scrollableHeight, 1);
+
+            // Animate from full offset (line hidden) to 0 (fully visible)
+            const dashOffset = lineLength - (scrollPercentage * lineLength);
+            progressLine.style.strokeDashoffset = dashOffset;
+
+            // Calculate current line end position
+            const currentLineEnd = startX + (scrollPercentage * lineLength);
+
+            // Update nav links color based on line position
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                const linkRect = link.getBoundingClientRect();
+                const linkCenter = linkRect.left + (linkRect.width / 2) - navbarRect.left;
+
+                // If line has passed the center of this link, make it yellow
+                if (currentLineEnd >= linkCenter) {
+                    link.classList.add('crossed');
+                } else {
+                    link.classList.remove('crossed');
+                }
+            });
+
+            // Also check the CTA button
+            const ctaCenter = ctaRect.left + (ctaRect.width / 2) - navbarRect.left;
+            if (currentLineEnd >= ctaCenter) {
+                navCta.classList.add('crossed');
+            } else {
+                navCta.classList.remove('crossed');
+            }
         }
 
         lastScroll = currentScroll;
@@ -166,6 +235,18 @@
             ticking = true;
         }
     }, { passive: true });
+
+    // Initialize progress line on load
+    if (progressLine && logo && navCta) {
+        updateProgressLinePosition();
+        updateNavbar();
+
+        // Recalculate on window resize
+        window.addEventListener('resize', () => {
+            updateProgressLinePosition();
+            updateNavbar();
+        });
+    }
 
     // ====================================
     // INTERSECTION OBSERVER FOR ANIMATIONS
@@ -220,6 +301,52 @@
         }, { threshold: 0.25 });
 
         videoObserver.observe(video);
+    }
+
+    // ====================================
+    // BEFORE/AFTER COMPARISON SLIDER
+    // ====================================
+    const comparisonSection = document.querySelector('.comparison-section');
+    const beforeImage = document.getElementById('beforeImage');
+
+    if (comparisonSection && beforeImage) {
+        let comparisonTicking = false;
+
+        function updateComparison() {
+            const scrollTrack = comparisonSection.querySelector('.scroll-track');
+            if (!scrollTrack) return;
+
+            const rect = scrollTrack.getBoundingClientRect();
+            const scrollTrackHeight = scrollTrack.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            // Calculate scroll progress through the section
+            // Progress goes from 0 (section enters viewport) to 1 (section exits viewport)
+            const scrollStart = -rect.top;
+            const scrollRange = scrollTrackHeight - viewportHeight;
+            const progress = Math.max(0, Math.min(1, scrollStart / scrollRange));
+
+            // Convert progress to percentage for clip-path
+            // Start with before image fully visible (100% width)
+            // End with before image hidden (0% width)
+            const clipPercentage = (1 - progress) * 100;
+
+            // Apply clip-path to reveal after image from left to right
+            beforeImage.style.clipPath = `inset(0 ${100 - clipPercentage}% 0 0)`;
+
+            comparisonTicking = false;
+        }
+
+        // Use scroll event with requestAnimationFrame for smooth performance
+        window.addEventListener('scroll', () => {
+            if (!comparisonTicking) {
+                window.requestAnimationFrame(updateComparison);
+                comparisonTicking = true;
+            }
+        }, { passive: true });
+
+        // Initialize on load
+        updateComparison();
     }
 
     // ====================================

@@ -7,7 +7,7 @@
     <meta name="description"
         content="Nutrição organizada por inteligência artificial. Baseada em dados, não em promessas. Calculadoras científicas para TMB, TDEE, macros e mais.">
     <meta name="theme-color" content="#FAF8F5">
-    <title>enerz.ai | Nutrição por IA</title>
+    <title>ENERZ | Nutrição por IA</title>
     <link rel="icon" type="image/png" href="enerz.png">
 
     <!-- Preload critical assets -->
@@ -41,7 +41,12 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="#" class="logo">ENERZ</a>
+            <a href="#" class="logo">
+                ENERZ
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </a>
 
             <div class="nav-links">
                 <a href="#como-funciona">Como Funciona</a>
@@ -59,6 +64,11 @@
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
+
+            <!-- Scroll Progress Line -->
+            <svg class="scroll-progress-line" aria-hidden="true">
+                <line x1="0" y1="0" x2="100%" y2="0" stroke-dasharray="1000" stroke-dashoffset="1000" />
+            </svg>
         </div>
     </nav>
 
@@ -287,43 +297,142 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits" id="beneficios">
+    <!-- Comparison Slider Section -->
+    <!-- Comparison Slider Section (Scroll Based) -->
+    <section class="comparison-section" id="resultados">
+        <!-- Scroll Track provides the height for scrolling -->
+        <div class="scroll-track">
+            <!-- Sticky Container holds the content in view -->
+            <div class="sticky-container">
+                <div class="container">
+                    <h2 class="section-title text-center">Resultados <span class="text-primary">Reais</span></h2>
+                    <p class="section-subtitle text-center" style="margin: 0 auto 3rem;">
+                        Role para ver a transformação
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="vertical-align: middle; margin-left: 4px;">
+                            <path d="M12 5v14M19 12l-7 7-7-7" />
+                        </svg>
+                    </p>
+
+                    <div class="comparison-wrapper">
+                        <div class="comparison-container" id="comparisonContainer">
+                            <div class="comparison-image after">
+                                <img src="assets/after.png" alt="Depois">
+                                <span class="label">DEPOIS</span>
+                            </div>
+                            <div class="comparison-image before" id="beforeImage">
+                                <div class="image-wrapper">
+                                    <img src="assets/before.png" alt="Antes">
+                                </div>
+                                <span class="label">ANTES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (formerly Benefits) -->
+    <section class="testimonials" id="beneficios">
         <div class="container">
-            <h2 class="section-title text-center">Por que <span class="text-primary">enerz.ai</span>?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
+            <h2 class="section-title text-center">PORQUE <span class="text-primary">ENERZ</span>?</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="assets/customer1.png" alt="Gabriel Silva" class="testimonial-img">
                     </div>
-                    <h3>Método científico</h3>
-                    <p>Aplicado à nutrição com base em evidências</p>
+                    <p class="testimonial-text">"A ENERZ mudou minha vida! A dieta se adapta perfeitamente à minha
+                        rotina. Perdi 5kg no primeiro mês sem passar fome."</p>
+                    <div class="testimonial-author">
+                        <h4>Gabriel Silva</h4>
+                        <div class="stars">
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="18" y1="20" x2="18" y2="10"></line>
-                            <line x1="12" y1="20" x2="12" y2="4"></line>
-                            <line x1="6" y1="20" x2="6" y2="14"></line>
-                        </svg>
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="assets/customer2.png" alt="Mariana Costa" class="testimonial-img">
                     </div>
-                    <h3>Cálculos precisos</h3>
-                    <p>De macros e micros para seu corpo</p>
+                    <p class="testimonial-text">"Incrível como a IA entende meus gostos. As receitas são deliciosas e
+                        fáceis de fazer. Recomendo para todos!"</p>
+                    <div class="testimonial-author">
+                        <h4>Mariana Costa</h4>
+                        <div class="stars">
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="assets/customer3.png" alt="Carlos Oliveira" class="testimonial-img">
                     </div>
-                    <h3>Protocolos específicos</h3>
-                    <p>Suporte para dietas low-carb, cetogênica e mais</p>
+                    <p class="testimonial-text">"Já tentei várias dietas, mas só a ENERZ funcionou a longo prazo. O
+                        suporte é ótimo e o app é muito intuitivo."</p>
+                    <div class="testimonial-author">
+                        <h4>Carlos Oliveira</h4>
+                        <div class="stars">
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -488,7 +597,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="footer-logo">enerz.ai</a>
+                    <a href="#" class="footer-logo">ENERZ</a>
                     <p>Nutrição por IA. Baseada em dados.</p>
                 </div>
 
@@ -524,7 +633,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 enerz.ai. Todos os direitos reservados.</p>
+                <p>&copy; 2024 ENERZ. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
