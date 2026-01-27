@@ -692,6 +692,35 @@ ul {
     gap: 2rem;
 }
 
+/* Mobile: Horizontal scroll */
+@media (max-width: 767px) {
+    .testimonials-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 1rem;
+        padding: 0 1rem 1rem 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .testimonials-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonials-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .testimonial-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        max-width: 350px;
+    }
+}
+
 .testimonial-card {
     display: flex;
     flex-direction: column;
