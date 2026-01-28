@@ -883,6 +883,38 @@ ul {
     font-size: 2rem;
 }
 
+/* Annual price specific layout */
+.annual-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.annual-main {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.annual-main .installments {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.annual-main .amount {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--foreground);
+}
+
+.annual-total {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+}
+
 .hidden {
     display: none !important;
 }
