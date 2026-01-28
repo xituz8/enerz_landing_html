@@ -392,4 +392,21 @@
         viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
     }
 
+    // ====================================
+    // CONTENT PROTECTION
+    // ====================================
+    // Disable right-click on images, videos, and video containers
+    document.addEventListener('contextmenu', (e) => {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.closest('.video-container')) {
+            e.preventDefault();
+        }
+    });
+
+    // Disable drag and drop on images and videos
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    });
+
 })();
