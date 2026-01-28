@@ -255,8 +255,12 @@ ul {
     overflow: visible;
 }
 
-/* On mobile, center the progress line */
+/* On mobile, center the progress line and logo */
 @media (max-width: 767px) {
+    .navbar-container {
+        justify-content: center;
+    }
+
     .scroll-progress-line {
         top: 50%;
         bottom: auto;
