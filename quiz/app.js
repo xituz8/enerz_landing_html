@@ -158,8 +158,22 @@ function showResult() {
             </div>
             
             <h2 class="result-title">Tudo pronto!</h2>
+            
+            <div class="video-wrapper">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
             <p class="result-text">
-                Seu plano personalizado foi gerado com sucesso.
+                Seu plano personalizado foi gerado com sucesso. Assista ao vídeo acima para entender como funciona.
             </p>
 
             <a href="/" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
