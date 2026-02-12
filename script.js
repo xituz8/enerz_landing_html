@@ -12,19 +12,8 @@
     const menuOverlay = document.getElementById('menuOverlay');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
-    const billingToggle = document.getElementById('billingToggle');
-    const pricingCta = document.getElementById('pricingCta');
     const faqItems = document.querySelectorAll('.faq-item');
     const navbar = document.getElementById('navbar');
-
-    // Payment URLs
-    const PAYMENT_URLS = {
-        monthly: 'https://pay.hub.la/azRo1diUh1n6VGO5CqEj',
-        annual: 'https://pay.hub.la/3CDrj6FhJOKMSQ24dsIW'
-    };
-
-    // State
-    let isAnnual = false;
 
     // ====================================
     // MOBILE MENU
@@ -54,48 +43,6 @@
             closeMenu();
         }
     });
-
-    // ====================================
-    // BILLING TOGGLE
-    // ====================================
-    function updateBilling(annual) {
-        isAnnual = annual;
-
-        // Update toggle state
-        billingToggle?.classList.toggle('annual', annual);
-
-        // Update labels
-        document.querySelectorAll('.toggle-label').forEach(label => {
-            const isActiveLabel = (label.dataset.billing === 'annual') === annual;
-            label.classList.toggle('active', isActiveLabel);
-        });
-
-        // Update prices
-        const monthlyPrice = document.querySelector('.monthly-price');
-        const annualPrice = document.querySelector('.annual-price');
-        const annualOnly = document.querySelector('.annual-only');
-
-        if (monthlyPrice && annualPrice) {
-            monthlyPrice.classList.toggle('hidden', annual);
-            annualPrice.classList.toggle('hidden', !annual);
-        }
-
-        if (annualOnly) {
-            annualOnly.classList.toggle('hidden', !annual);
-        }
-
-        // Update CTA link
-        if (pricingCta) {
-            pricingCta.href = annual ? PAYMENT_URLS.annual : PAYMENT_URLS.monthly;
-        }
-    }
-
-    billingToggle?.addEventListener('click', () => {
-        updateBilling(!isAnnual);
-    });
-
-    // Initialize with monthly selected
-    updateBilling(false);
 
     // ====================================
     // FAQ ACCORDION

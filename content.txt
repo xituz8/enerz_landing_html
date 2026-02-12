@@ -1,0 +1,239 @@
+================================================================================
+ ENERZ LANDING PAGE — CONTENT FILE
+ Edit the texts below and I'll update the website accordingly.
+ DO NOT change the section headers (lines starting with ===, ---, or ##).
+ Only change the text content below each label.
+================================================================================
+
+
+===========================
+ SECTION 1: META / SEO
+===========================
+
+Page Title: ENERZ | Nutrição por IA
+Meta Description: Sua dieta em 3 minutos. Baseada em dados, não em promessas. Foco em qualidade e precisão com IA.
+
+
+===========================
+ SECTION 2: NAVBAR
+===========================
+
+Logo Text: ENERZ
+
+-- Nav Links --
+Link 1: Como Funciona
+Link 2: Benefícios
+Link 3: Preços
+Link 4: Calculadoras
+
+-- CTA Button --
+Button Text: Começar
+
+
+===========================
+ SECTION 3: HERO
+===========================
+
+Badge Text: Nutrição por IA
+
+Headline: Você não falha na dieta. Ela que falha para se adaptar a você.
+(NOTE: "Ela que falha" appears highlighted/colored on the page)
+
+Subtitle: A Enerz cria e recalcula sua dieta conforme seu corpo, seus gostos, sua rotina e seus objetivos mudam.
+
+CTA Button: Começar
+
+
+===========================
+ SECTION 4: VIDEO HERO (Como Funciona)
+===========================
+
+Badge Text: Nova Era da Nutrição
+
+Title: Sua Dieta com IA
+(NOTE: "IA" appears highlighted/colored)
+
+Subtitle: Veja como a ENERZ cria e ajusta sua dieta em tempo real, adaptando-se às suas necessidades e preferências.
+
+Video File: assets/videopronto.mp4
+
+
+===========================
+ SECTION 5: APP SHOWCASE
+===========================
+
+Title: Seu coach de nutrição no bolso
+(NOTE: "nutrição" appears highlighted/colored)
+
+Subtitle: Tenha acesso a um plano alimentar personalizado que se adapta ao seu estilo de vida.
+
+-- Feature 1 --
+Feature Title: Planos personalizados
+Feature Description: Dietas criadas especificamente para você
+
+-- Feature 2 --
+Feature Title: Atualizações em tempo real
+Feature Description: Ajustes automáticos conforme seu progresso
+
+-- Feature 3 --
+Feature Title: Tracking completo
+Feature Description: Acompanhe macros, calorias e nutrientes
+
+-- Feature 4 --
+Feature Title: IA avançada
+Feature Description: Tecnologia de ponta para resultados reais
+
+Phone Image: assets/phone-mockup-1.png
+
+
+===========================
+ SECTION 6: FEATURE SHOWCASE
+===========================
+
+Title: Recursos completos para resultados reais
+(NOTE: "resultados" appears highlighted/colored)
+
+Subtitle: Tudo o que você precisa para alcançar seus objetivos nutricionais em um só lugar.
+
+-- Feature 1 --
+Feature Title: Receitas personalizadas
+Feature Description: Sugestões baseadas nas suas preferências
+
+-- Feature 2 --
+Feature Title: Suporte 24/7
+Feature Description: Assistência sempre que precisar
+
+-- Feature 3 --
+Feature Title: Comunidade exclusiva
+Feature Description: Conecte-se com pessoas com objetivos similares
+
+-- Feature 4 --
+Feature Title: Resultados comprovados
+Feature Description: Milhares de usuários satisfeitos
+
+Phone Image: assets/phone-mockup-2.png
+
+
+===========================
+ SECTION 7: COMPARISON / RESULTADOS
+===========================
+
+Title: Resultados Reais
+(NOTE: "Reais" appears highlighted/colored)
+
+Subtitle: Role para ver a transformação
+
+Before Image: assets/antes.png
+Before Label: ANTES
+
+After Image: assets/depois.png
+After Label: DEPOIS
+
+
+===========================
+ SECTION 8: TESTIMONIALS (Benefícios)
+===========================
+
+Section Title: PORQUE ENERZ?
+(NOTE: "ENERZ" appears highlighted/colored)
+
+-- Testimonial 1 --
+Image: assets/customer1.png
+Name: Gabriel Silva
+Stars: 5
+Text: "A ENERZ mudou minha vida! A dieta se adapta perfeitamente à minha rotina. Perdi 5kg no primeiro mês sem passar fome."
+
+-- Testimonial 2 --
+Image: assets/customer2.png
+Name: Mariana Costa
+Stars: 5
+Text: "Incrível como a IA entende meus gostos. As receitas são deliciosas e fáceis de fazer. Recomendo para todos!"
+
+-- Testimonial 3 --
+Image: assets/customer3.png
+Name: Carlos Oliveira
+Stars: 5
+Text: "Já tentei várias dietas, mas só a ENERZ funcionou a longo prazo. O suporte é ótimo e o app é muito intuitivo."
+
+
+===========================
+ SECTION 9: FREE TRIAL (Acesso)
+===========================
+
+Section Title: Acesso
+(NOTE: "Acesso" appears highlighted/colored)
+
+Headline: 7 dias grátis
+Subtitle: Experimente a ENERZ sem compromisso. Sem cartão de crédito.
+
+-- Features --
+Feature 1: Dietas personalizadas
+Feature 2: Ajustes conforme necessário
+Feature 3: Cálculo de macros e micros
+Feature 4: Suporte via WhatsApp
+
+CTA Button: Começar agora — é grátis
+Note: Teste gratuito de 7 dias. Sem compromisso.
+
+WhatsApp Link: https://wa.me/5534991355078
+WhatsApp Message: Olá! Quero começar meu teste grátis de 7 dias da ENERZ!
+
+
+===========================
+ SECTION 10: FAQ (Perguntas Frequentes)
+===========================
+
+Section Title: Perguntas Frequentes
+(NOTE: "Frequentes" appears highlighted/colored)
+
+-- Question 1 --
+Q: Como funciona a IA da ENERZ?
+A: Nossa IA analisa seus dados pessoais, preferências alimentares, objetivos e rotina para criar um plano alimentar totalmente personalizado. Ela aprende com seu progresso e ajusta automaticamente as recomendações.
+
+-- Question 2 --
+Q: Posso cancelar a qualquer momento?
+A: Sim! Você pode cancelar sua assinatura a qualquer momento, sem taxas ou multas. Nossa plataforma é flexível e sem compromisso de fidelidade.
+
+-- Question 3 --
+Q: Com que frequência a dieta é atualizada?
+A: Sua dieta pode ser ajustada sempre que necessário. Recomendamos revisões periódicas para garantir que o plano continue alinhado com seus objetivos e progresso.
+
+-- Question 4 --
+Q: Posso escolher os alimentos?
+A: Absolutamente! Você pode informar suas preferências, restrições alimentares e alimentos favoritos. Nossa IA considera tudo isso ao criar seu plano personalizado.
+
+-- Question 5 --
+Q: Como recebo minha dieta?
+A: Após preencher o questionário inicial, sua dieta é gerada instantaneamente e fica disponível na plataforma. Você pode acessar de qualquer dispositivo, a qualquer momento.
+
+
+===========================
+ SECTION 11: FOOTER
+===========================
+
+-- Brand --
+Logo: ENERZ
+Tagline: Nutrição por IA. Baseada em dados.
+
+-- Links Column 1 --
+Column Title: Links
+Link 1: Como Funciona
+Link 2: Benefícios
+Link 3: Preços
+Link 4: Métodos
+
+-- Links Column 2 --
+Column Title: Calculadoras
+Link 1: TMB
+Link 2: TDEE
+Link 3: IMC
+Link 4: Proteína
+
+-- Links Column 3 --
+Column Title: Legal
+Link 1: Termos de Uso
+Link 2: Privacidade
+Link 3: Cookies
+
+-- Copyright --
+Text: © 2024 ENERZ. Todos os direitos reservados.
