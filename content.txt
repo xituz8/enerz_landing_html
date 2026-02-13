@@ -149,17 +149,17 @@ Feature 4: Suporte via WhatsApp
 -- Plan 1: Mensal --
 Price: R$ 29,99/mês
 CTA Button: Começar 7 dias grátis
-Stripe Link: https://buy.stripe.com/cNi8wR2RO62jdMZ0U1gEg00
+Stripe Link: https://buy.stripe.com/8x28wR6401M3bER8mtgEg06
 
 -- Plan 2: Trimestral (Mais Popular) --
 Price: R$ 24,99/mês (R$ 74,97 cobrados a cada 3 meses)
 CTA Button: Começar 7 dias grátis
-Stripe Link: https://buy.stripe.com/eVqcN78c8eyP4cp9qxgEg05
+Stripe Link: https://buy.stripe.com/8x2aEZ2RO1M310d46dgEg07
 
 -- Plan 3: Anual (Economize 33%) --
 Price: R$ 19,92/mês (R$ 239,00 cobrados anualmente)
 CTA Button: Começar 14 dias grátis
-Stripe Link: https://buy.stripe.com/5kQcN7akgduL10d46dgEg04
+Stripe Link: https://buy.stripe.com/7sY14p3VSgGX38lfOVgEg08
 
 Note (Mensal & Trimestral): Teste gratuito de 7 dias. Sem compromisso.
 Note (Anual): Teste gratuito de 14 dias. Sem compromisso.
