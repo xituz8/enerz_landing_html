@@ -154,7 +154,7 @@ Stripe Link: https://buy.stripe.com/cNi8wR2RO62jdMZ0U1gEg00
 -- Plan 2: Trimestral (Mais Popular) --
 Price: R$ 24,99/mês (R$ 74,97 cobrados a cada 3 meses)
 CTA Button: Começar 7 dias grátis
-Stripe Link: https://buy.stripe.com/28E5kF9gcduL4cp5ahgEg02
+Stripe Link: https://buy.stripe.com/eVqcN78c8eyP4cp9qxgEg05
 
 -- Plan 3: Anual (Economize 33%) --
 Price: R$ 19,92/mês (R$ 239,00 cobrados anualmente)
