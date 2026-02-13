@@ -797,11 +797,28 @@ ul {
 }
 
 .pricing-security-note {
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.8125rem;
-    color: var(--muted-foreground);
-    margin-bottom: 2.5rem;
-    opacity: 0.85;
+    color: var(--foreground);
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius);
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.pricing-security-note svg {
+    color: #22c55e;
+    flex-shrink: 0;
+}
+
+.pricing>.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pricing-grid {
