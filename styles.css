@@ -796,61 +796,85 @@ ul {
     background: var(--secondary);
 }
 
-.billing-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.toggle-label {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-    transition: color 0.2s;
-}
-
-.toggle-label.active {
-    color: var(--foreground);
-    font-weight: 600;
-}
-
-.toggle-switch {
-    position: relative;
-    width: 56px;
-    height: 28px;
-    background: var(--border);
-    border-radius: 9999px;
-    padding: 2px;
-}
-
-.toggle-handle {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 24px;
-    height: 24px;
-    background: var(--primary);
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.toggle-switch.annual .toggle-handle {
-    transform: translateX(28px);
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
 }
 
 .pricing-card {
-    max-width: 400px;
-    margin: 0 auto;
+    position: relative;
     padding: 2rem;
     background: var(--background);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--primary);
+    box-shadow: 0 8px 32px rgba(255, 212, 0, 0.15);
+}
+
+.pricing-card.popular:hover {
+    box-shadow: 0 16px 48px rgba(255, 212, 0, 0.25);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--foreground);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.375rem 1.25rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.savings-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #22c55e;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.375rem 1.25rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.pricing-card-header {
+    margin-bottom: 1rem;
+}
+
+.plan-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--foreground);
 }
 
 .price-display {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .price {
@@ -875,53 +899,16 @@ ul {
     color: var(--muted-foreground);
 }
 
-.annual-price .currency {
-    font-size: 1rem;
-}
-
-.annual-price .amount {
-    font-size: 2rem;
-}
-
-/* Annual price specific layout */
-.annual-price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.annual-main {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-}
-
-.annual-main .installments {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--foreground);
-}
-
-.annual-main .amount {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--foreground);
-}
-
-.annual-total {
-    font-size: 0.875rem;
+.price-detail {
+    font-size: 0.8125rem;
     color: var(--muted-foreground);
-    font-weight: 500;
-}
-
-.hidden {
-    display: none !important;
+    margin-top: 0.5rem;
 }
 
 .pricing-features {
     text-align: left;
     margin-bottom: 2rem;
+    flex-grow: 1;
 }
 
 .pricing-features li {
@@ -950,6 +937,39 @@ ul {
 .pricing-note {
     font-size: 0.8125rem;
     color: var(--muted-foreground);
+}
+
+/* Outline button variant */
+.btn-outline {
+    background: transparent;
+    color: var(--foreground);
+    border: 2px solid var(--border);
+    padding: 0.875rem 1.75rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9375rem;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    background: rgba(255, 212, 0, 0.08);
+    color: var(--foreground);
+}
+
+.btn-outline.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none !important;
 }
 
 /* ====================================
@@ -1227,12 +1247,20 @@ ul {
         padding: 6rem 0;
     }
 
-    .pricing-card {
-        padding: 3rem;
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .price .amount {
-        font-size: 3rem;
+    .pricing-card {
+        padding: 2.5rem;
+    }
+
+    .pricing-card.popular {
+        transform: scale(1.05);
+    }
+
+    .pricing-card.popular:hover {
+        transform: scale(1.05) translateY(-4px);
     }
 
     /* FAQ */

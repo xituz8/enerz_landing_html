@@ -130,53 +130,39 @@ After Image: assets/depois.png
 After Label: DEPOIS
 
 
-===========================
- SECTION 8: TESTIMONIALS (Benefícios)
-===========================
-
-Section Title: PORQUE ENERZ?
-(NOTE: "ENERZ" appears highlighted/colored)
-
--- Testimonial 1 --
-Image: assets/customer1.png
-Name: Gabriel Silva
-Stars: 5
-Text: "A ENERZ mudou minha vida! A dieta se adapta perfeitamente à minha rotina. Perdi 5kg no primeiro mês sem passar fome."
-
--- Testimonial 2 --
-Image: assets/customer2.png
-Name: Mariana Costa
-Stars: 5
-Text: "Incrível como a IA entende meus gostos. As receitas são deliciosas e fáceis de fazer. Recomendo para todos!"
-
--- Testimonial 3 --
-Image: assets/customer3.png
-Name: Carlos Oliveira
-Stars: 5
-Text: "Já tentei várias dietas, mas só a ENERZ funcionou a longo prazo. O suporte é ótimo e o app é muito intuitivo."
-
 
 ===========================
- SECTION 9: FREE TRIAL (Acesso)
+ SECTION 9: PRICING (Planos)
 ===========================
 
-Section Title: Acesso
-(NOTE: "Acesso" appears highlighted/colored)
+Section Title: Escolha seu Plano
+(NOTE: "Plano" appears highlighted/colored)
 
-Headline: 7 dias grátis
-Subtitle: Experimente a ENERZ sem compromisso. Sem cartão de crédito.
+Section Subtitle: Todos os planos incluem 7 dias grátis para teste. Cancele quando quiser.
 
--- Features --
-Feature 1: Dietas personalizadas
-Feature 2: Ajustes conforme necessário
+-- Features (same for all plans) --
+Feature 1: Dietas personalizadas por IA
+Feature 2: Ajustes ilimitados
 Feature 3: Cálculo de macros e micros
 Feature 4: Suporte via WhatsApp
 
-CTA Button: Começar agora — é grátis
-Note: Teste gratuito de 7 dias. Sem compromisso.
+-- Plan 1: Mensal --
+Price: R$ 29,99/mês
+CTA Button: Começar 7 dias grátis
+Stripe Link: https://buy.stripe.com/cNi8wR2RO62jdMZ0U1gEg00
 
-WhatsApp Link: https://wa.me/5534991355078
-WhatsApp Message: Olá! Quero começar meu teste grátis de 7 dias da ENERZ!
+-- Plan 2: Trimestral (Mais Popular) --
+Price: R$ 24,99/mês (R$ 74,97 cobrados a cada 3 meses)
+CTA Button: Começar 7 dias grátis
+Stripe Link: https://buy.stripe.com/28E5kF9gcduL4cp5ahgEg02
+
+-- Plan 3: Anual (Economize 33%) --
+Price: R$ 19,92/mês (R$ 239,00 cobrados anualmente)
+CTA Button: Começar 14 dias grátis
+Stripe Link: https://buy.stripe.com/5kQcN7akgduL10d46dgEg04
+
+Note (Mensal & Trimestral): Teste gratuito de 7 dias. Sem compromisso.
+Note (Anual): Teste gratuito de 14 dias. Sem compromisso.
 
 
 ===========================
