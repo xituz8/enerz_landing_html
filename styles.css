@@ -796,6 +796,14 @@ ul {
     background: var(--secondary);
 }
 
+.pricing-security-note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: 1fr;
