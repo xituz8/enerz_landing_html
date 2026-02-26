@@ -278,51 +278,7 @@
         videoObserver.observe(video);
     }
 
-    // ====================================
-    // BEFORE/AFTER COMPARISON SLIDER
-    // ====================================
-    const comparisonSection = document.querySelector('.comparison-section');
-    const beforeImage = document.getElementById('beforeImage');
 
-    if (comparisonSection && beforeImage) {
-        let comparisonTicking = false;
-
-        function updateComparison() {
-            const scrollTrack = comparisonSection.querySelector('.scroll-track');
-            if (!scrollTrack) return;
-
-            const rect = scrollTrack.getBoundingClientRect();
-            const scrollTrackHeight = scrollTrack.offsetHeight;
-            const viewportHeight = window.innerHeight;
-
-            // Calculate scroll progress through the section
-            // Progress goes from 0 (section enters viewport) to 1 (section exits viewport)
-            const scrollStart = -rect.top;
-            const scrollRange = scrollTrackHeight - viewportHeight;
-            const progress = Math.max(0, Math.min(1, scrollStart / scrollRange));
-
-            // Convert progress to percentage for clip-path
-            // Start with before image fully visible (100% width)
-            // End with before image hidden (0% width)
-            const clipPercentage = (1 - progress) * 100;
-
-            // Apply clip-path to reveal after image from left to right
-            beforeImage.style.clipPath = `inset(0 ${100 - clipPercentage}% 0 0)`;
-
-            comparisonTicking = false;
-        }
-
-        // Use scroll event with requestAnimationFrame for smooth performance
-        window.addEventListener('scroll', () => {
-            if (!comparisonTicking) {
-                window.requestAnimationFrame(updateComparison);
-                comparisonTicking = true;
-            }
-        }, { passive: true });
-
-        // Initialize on load
-        updateComparison();
-    }
 
     // ====================================
     // TOUCH DEVICE DETECTION

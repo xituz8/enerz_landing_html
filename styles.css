@@ -458,18 +458,46 @@ ul {
     position: relative;
     width: 80%;
     max-width: 280px;
+    margin: 0 auto;
 }
 
-/* .video-glow removed */
+.video-mockup::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -12px;
+    right: -12px;
+    border: 12px solid #1a1a1a;
+    border-radius: 40px;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow:
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1),
+        0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+.video-mockup::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background: #1a1a1a;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 3;
+}
 
 .video-container {
     position: relative;
-    border-radius: 24px;
+    border-radius: 30px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 2px solid #000;
     background: #1A1A1A;
     aspect-ratio: 9/19;
-    /* box-shadow removed */
 }
 
 .video-container video {
@@ -584,102 +612,6 @@ ul {
     /* box-shadow removed */
 }
 
-/* ====================================
-   COMPARISON SLIDER SECTION
-   ==================================== */
-.comparison-section {
-    position: relative;
-    background: var(--background);
-}
-
-/* Scroll Track provides height for scrolling */
-.scroll-track {
-    height: 300vh;
-    /* 3x viewport height for scroll range */
-    position: relative;
-}
-
-/* Sticky Container keeps content in view while scrolling */
-.sticky-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.comparison-wrapper {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.comparison-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3/4;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-/* After Image (base layer) */
-.comparison-image.after {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-}
-
-.comparison-image.after img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Before Image (top layer with clip-path) */
-.comparison-image.before {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 0.1s ease-out;
-}
-
-.comparison-image.before .image-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.comparison-image.before img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Labels */
-.comparison-image .label {
-    position: absolute;
-    top: 1.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    border-radius: 4px;
-    z-index: 10;
-}
-
-.comparison-image.before .label {
-    left: 1.5rem;
-}
-
-.comparison-image.after .label {
-    right: 1.5rem;
-}
 
 /* ====================================
    BENEFITS SECTION
