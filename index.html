@@ -344,7 +344,7 @@
                     <ul class="diferenciais-list"
                         style="list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-direction: column; gap: 1.5rem;">
                         <li
-                            style="display: flex; align-items: center; gap: 1rem; font-size: 1.15rem; font-weight: 500;">
+                            style="display: flex; align-items: flex-start; gap: 1rem; font-size: 1.15rem; font-weight: 500; line-height: 1.4;">
                             <div
                                 style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -355,7 +355,7 @@
                             Adaptada à sua rotina real
                         </li>
                         <li
-                            style="display: flex; align-items: center; gap: 1rem; font-size: 1.15rem; font-weight: 500;">
+                            style="display: flex; align-items: flex-start; gap: 1rem; font-size: 1.15rem; font-weight: 500; line-height: 1.4;">
                             <div
                                 style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -366,7 +366,7 @@
                             Ajustável ao longo do tempo
                         </li>
                         <li
-                            style="display: flex; align-items: center; gap: 1rem; font-size: 1.15rem; font-weight: 500;">
+                            style="display: flex; align-items: flex-start; gap: 1rem; font-size: 1.15rem; font-weight: 500; line-height: 1.4;">
                             <div
                                 style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -377,7 +377,7 @@
                             Baseada em diretrizes nutricionais reconhecidas
                         </li>
                         <li
-                            style="display: flex; align-items: center; gap: 1rem; font-size: 1.15rem; font-weight: 500;">
+                            style="display: flex; align-items: flex-start; gap: 1rem; font-size: 1.15rem; font-weight: 500; line-height: 1.4;">
                             <div
                                 style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -388,7 +388,7 @@
                             Foco em consistência e organização alimentar
                         </li>
                         <li
-                            style="display: flex; align-items: center; gap: 1rem; font-size: 1.15rem; font-weight: 500;">
+                            style="display: flex; align-items: flex-start; gap: 1rem; font-size: 1.15rem; font-weight: 500; line-height: 1.4;">
                             <div
                                 style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -514,16 +514,24 @@
                 <span>Você será redirecionado para <strong>o nosso bot no WhatsApp</strong></span>
             </div>
 
+            <div class="pricing-switch-wrapper">
+                <div class="pricing-switch">
+                    <button class="switch-btn" data-plan="mensal">Mensal</button>
+                    <button class="switch-btn active" data-plan="trimestral">Trimestral</button>
+                    <button class="switch-btn" data-plan="anual">Anual</button>
+                </div>
+            </div>
+
             <div class="pricing-grid">
                 <!-- Mensal -->
-                <div class="pricing-card">
+                <div class="pricing-card" id="pricing-mensal">
                     <div class="pricing-card-header">
                         <h3 class="plan-name">Mensal</h3>
                     </div>
                     <div class="price-display">
                         <div class="price">
                             <span class="currency">R$</span>
-                            <span class="amount">29,99</span>
+                            <span class="amount">34,99</span>
                             <span class="period">/mês</span>
                         </div>
                     </div>
@@ -565,7 +573,7 @@
                 </div>
 
                 <!-- Trimestral (Popular) -->
-                <div class="pricing-card popular">
+                <div class="pricing-card popular active-plan" id="pricing-trimestral">
                     <div class="popular-badge">Mais Popular</div>
                     <div class="pricing-card-header">
                         <h3 class="plan-name">Trimestral</h3>
@@ -573,10 +581,10 @@
                     <div class="price-display">
                         <div class="price">
                             <span class="currency">R$</span>
-                            <span class="amount">24,99</span>
+                            <span class="amount">29,99</span>
                             <span class="period">/mês</span>
                         </div>
-                        <p class="price-detail">R$ 74,97 cobrados a cada 3 meses</p>
+                        <p class="price-detail">R$ 89,97 cobrados a cada 3 meses</p>
                     </div>
                     <ul class="pricing-features">
                         <li>
@@ -608,15 +616,15 @@
                             Suporte via WhatsApp
                         </li>
                     </ul>
-                    <a href="https://wa.me/5534991355078?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20meu%20plano%20TRIMESTRAL%20da%20ENERZ%20(14%20dias%20gr%C3%A1tis)"
+                    <a href="https://wa.me/5534991355078?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20meu%20plano%20TRIMESTRAL%20da%20ENERZ%20(7%20dias%20gr%C3%A1tis)"
                         target="_blank" class="btn btn-primary btn-lg pricing-cta">
-                        Teste gratuito de 14 dias
+                        Teste gratuito de 7 dias
                     </a>
-                    <p class="pricing-note">Teste gratuito de 14 dias. Sem compromisso.</p>
+                    <p class="pricing-note">Teste gratuito de 7 dias. Sem compromisso.</p>
                 </div>
 
                 <!-- Anual -->
-                <div class="pricing-card">
+                <div class="pricing-card" id="pricing-anual">
                     <div class="savings-badge">Economize 33%</div>
                     <div class="pricing-card-header">
                         <h3 class="plan-name">Anual</h3>
@@ -624,10 +632,10 @@
                     <div class="price-display">
                         <div class="price">
                             <span class="currency">R$</span>
-                            <span class="amount">19,92</span>
+                            <span class="amount">24,08</span>
                             <span class="period">/mês</span>
                         </div>
-                        <p class="price-detail">R$ 239,00 cobrados anualmente</p>
+                        <p class="price-detail">R$ 289,00 cobrados anualmente</p>
                     </div>
                     <ul class="pricing-features">
                         <li>
@@ -659,11 +667,11 @@
                             Suporte via WhatsApp
                         </li>
                     </ul>
-                    <a href="https://wa.me/5534991355078?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20meu%20plano%20ANUAL%20da%20ENERZ%20(14%20dias%20gr%C3%A1tis)"
+                    <a href="https://wa.me/5534991355078?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20meu%20plano%20ANUAL%20da%20ENERZ%20(7%20dias%20gr%C3%A1tis)"
                         target="_blank" class="btn btn-outline btn-lg pricing-cta">
-                        Começar 14 dias grátis
+                        Começar 7 dias grátis
                     </a>
-                    <p class="pricing-note">Teste gratuito de 14 dias. Sem compromisso.</p>
+                    <p class="pricing-note">Teste gratuito de 7 dias. Sem compromisso.</p>
                 </div>
             </div>
         </div>

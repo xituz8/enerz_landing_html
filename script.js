@@ -279,6 +279,34 @@
     }
 
 
+    // ====================================
+    // PRICING MOBILE SWITCH
+    // ====================================
+    const switchBtns = document.querySelectorAll('.switch-btn');
+    if (switchBtns.length > 0) {
+        switchBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                switchBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                // Get target plan
+                const targetPlan = btn.getAttribute('data-plan');
+
+                // Hide all pricing cards
+                document.querySelectorAll('.pricing-card').forEach(card => {
+                    card.classList.remove('active-plan');
+                });
+
+                // Show target pricing card
+                const targetCard = document.getElementById(`pricing-${targetPlan}`);
+                if (targetCard) {
+                    targetCard.classList.add('active-plan');
+                }
+            });
+        });
+    }
 
     // ====================================
     // TOUCH DEVICE DETECTION
